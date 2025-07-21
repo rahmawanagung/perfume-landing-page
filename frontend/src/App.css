@@ -1,0 +1,97 @@
+/* Ganti style .navbar-container yang ada dengan ini */
+.navbar-container {
+  border-bottom: 1px solid #ebebeb; /* Gunakan abu-abu sangat terang untuk garis */
+  background-color: #f9f9f9; /* Samakan dengan warna body */
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+.nav-link {
+  font-family: "Karla", sans-serif;
+  text-decoration: none;
+  color: #555;
+  font-size: 1rem;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+.nav-link:hover {
+  color: #1a1a1a;
+}
+.nav-link.active {
+  color: #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
+}
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+.product-brand {
+  font-family: "Karla", sans-serif;
+  font-weight: 400; /* Kurangi ketebalan */
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em; /* Tambahkan jarak antar huruf untuk kesan mewah */
+  margin: 0 0 0.5rem 0;
+  color: #666; /* Gunakan abu-abu, bukan hitam pekat */
+}
+.product-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem; /* Sedikit perbesar */
+  font-weight: 600; /* Pastikan tebalnya pas */
+  line-height: 1.3; /* Beri sedikit ruang napas */
+  margin: 0 0 0.75rem 0;
+}
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(320px, 1fr)
+  ); /* Perlebar sedikit kartu minimal */
+  gap: 4rem 3rem; /* Perbesar jarak antar produk (vertikal dan horizontal) */
+  padding-bottom: 5rem;
+}
+.product-card {
+  text-align: center;
+  opacity: 0; /* Tambahkan ini untuk animasi fade-in */
+  animation: fadeIn 0.8s ease-out forwards;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.product-image-container {
+  width: 100%;
+  padding-top: 125%;
+  position: relative;
+  background-color: #fff; /* Latar belakang gambar menjadi putih bersih */
+  margin-bottom: 2rem; /* Beri jarak lebih ke teks */
+  overflow: hidden;
+  transition: box-shadow 0.4s ease; /* Transisi untuk bayangan */
+}
+.product-image-container:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07); /* Tambahkan bayangan halus saat hover */
+}
+.product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); /* Transisi scale yang sangat halus */
+}
+.product-card:hover .product-image {
+  transform: scale(1.03); /* Kurangi efek scale agar lebih subtil */
+}

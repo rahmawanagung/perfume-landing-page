@@ -1,0 +1,47 @@
+.homepage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 200px); /* Adjust based on navbar height */
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1594035918259-9a9a6c5a48f4?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=3600');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 3rem 4rem;
+    backdrop-filter: blur(5px);
+}
+
+.hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.hero-subtitle {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem 0;
+    opacity: 0.9;
+}
+
+.hero-button {
+    font-family: 'Karla', sans-serif;
+    background-color: white;
+    color: black;
+    padding: 0.8rem 2.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: 1px solid white;
+}
+
+.hero-button:hover {
+    background-color: transparent;
+    color: white;
+}

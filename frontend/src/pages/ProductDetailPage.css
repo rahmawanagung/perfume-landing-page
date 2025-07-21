@@ -1,0 +1,74 @@
+.product-detail-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    align-items: center;
+}
+
+.product-detail-image img {
+    width: 100%;
+    height: auto;
+    background-color: #f5f5f5;
+}
+
+.product-detail-info {
+    text-align: left;
+}
+
+.detail-brand {
+    font-family: 'Karla', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 0 0 0.5rem 0;
+}
+
+.detail-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.detail-description {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #555;
+}
+
+.detail-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    margin-bottom: 2.5rem;
+}
+
+.add-to-cart-btn {
+    background-color: #1a1a1a;
+    color: white;
+    border: 1px solid #1a1a1a;
+    padding: 1rem 3rem;
+    font-family: 'Karla', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.add-to-cart-btn:hover {
+    background-color: white;
+    color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+    .product-detail-page {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+}
