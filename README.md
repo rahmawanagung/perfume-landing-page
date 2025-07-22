@@ -19,7 +19,7 @@ Aplikasi web e-commerce multi-halaman untuk parfum, dibangun dengan React, Node.
     docker-compose up --build
     ```
 4.  **Akses Aplikasi**:
-    -   **Frontend**: `http://localhost`
+    -   **Frontend**: `http://localhost:3000`
     -   **Backend API**: `http://localhost:5000/api/perfumes`
 
 ## Menghentikan Aplikasi
