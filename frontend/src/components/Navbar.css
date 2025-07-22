@@ -1,0 +1,89 @@
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #F8F7F3;
+  z-index: 1000;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 80px;
+}
+
+.navbar-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: #1A1A1A;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  color: #1A1A1A;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #1A1A1A;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+}
+
+.navbar-toggle {
+  display: none; /* Sembunyikan di desktop */
+}
+
+/* Tampilan untuk Mobile */
+@media (max-width: 768px) {
+  .navbar-links, .navbar-actions {
+    display: none;
+  }
+  .navbar-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  /* Style untuk menu mobile yang terbuka akan ditambahkan jika diperlukan */
+}

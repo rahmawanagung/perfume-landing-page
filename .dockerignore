@@ -1,0 +1,19 @@
+# Abaikan folder node_modules dari semua direktori
+**/node_modules
+
+# Abaikan folder output build
+**/build
+
+# Abaikan file .env
+**/.env
+**/.env.local
+
+# Abaikan folder Git
+.git
+
+# Abaikan log Docker
+docker-debug.log
+docker-compose-debug.log
+
+# Abaikan pengaturan IDE
+.vscode

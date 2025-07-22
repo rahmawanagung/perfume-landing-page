@@ -3,22 +3,25 @@ services:
     image: postgres:14-alpine
     container_name: perfume_db
     restart: always
-    environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=perfumedb
+    env_file:
+      - ./.env
     volumes:
       - ./database:/docker-entrypoint-initdb.d
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U user -d perfumedb"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - perfume_network
+
   backend:
-    build: ./backend
+    build:
+      context: . # <-- PERBAIKAN: Konteks diubah ke root folder proyek
+      dockerfile: ./backend/Dockerfile # <-- PERBAIKAN: Path ke Dockerfile dispesifikkan
     container_name: perfume_backend
     restart: always
     depends_on:
@@ -28,13 +31,27 @@ services:
       - "5000:5000"
     env_file:
       - ./backend/.env
+    networks:
+      - perfume_network
+
   frontend:
-    build: ./frontend
+    build:
+      context: . # <-- PERBAIKAN: Konteks diubah ke root folder proyek
+      dockerfile: ./frontend/Dockerfile # <-- PERBAIKAN: Path ke Dockerfile dispesifikkan
+      args:
+        VITE_API_BASE_URL: ${VITE_API_BASE_URL}
     container_name: perfume_frontend
     restart: always
     ports:
-      - "80:80"
+      - "3000:80"
     depends_on:
       - backend
+    networks:
+      - perfume_network
+
 volumes:
   postgres_data:
+
+networks:
+  perfume_network:
+    driver: bridge

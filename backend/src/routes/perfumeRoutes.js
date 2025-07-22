@@ -1,6 +1,12 @@
-import { Router } from 'express';
+import express from 'express';
 import { getAllPerfumes, getPerfumeById } from '../controllers/perfumeController.js';
-const router = Router();
-router.get('/perfumes', getAllPerfumes);
-router.get('/perfumes/:id', getPerfumeById);
+
+const router = express.Router();
+
+// Route untuk mendapatkan semua parfum
+router.get('/', getAllPerfumes);
+
+// Route untuk mendapatkan detail satu parfum
+router.get('/:id', getPerfumeById);
+
 export default router;

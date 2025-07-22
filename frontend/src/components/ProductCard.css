@@ -1,0 +1,41 @@
+.product-card-minimal {
+  text-align: left;
+  cursor: pointer;
+}
+
+.card-image-container {
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #fff; /* Memberi background jika gambar transparan */
+}
+
+.card-image-container img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5; /* Membuat rasio gambar seragam */
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card-minimal:hover .card-image-container img {
+  transform: scale(1.05); /* Efek zoom halus saat hover */
+}
+
+.card-info {
+  padding: 0 0.5rem;
+}
+
+.perfume-brand {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+}
+
+.perfume-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1A1A1A;
+}

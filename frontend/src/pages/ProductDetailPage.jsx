@@ -42,7 +42,7 @@ const ProductDetailPage = () => {
   return (
     <div className="product-detail-page">
       <div className="product-detail-image">
-        <img src={product.imgurl} alt={`${product.brand} - ${product.name}`} />
+        <img src={product.image_url} alt={`${product.brand} - ${product.name}`} />
       </div>
       <div className="product-detail-info">
         <h2 className="detail-brand">{product.brand}</h2>

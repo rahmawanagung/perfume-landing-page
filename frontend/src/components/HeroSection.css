@@ -1,0 +1,73 @@
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  min-height: calc(100vh - 80px); /* Tinggi layar dikurangi tinggi navbar */
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-text-content {
+  flex: 1;
+  padding-right: 3rem;
+}
+
+.hero-headline {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subheadline {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.hero-cta-button {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #F8F7F3;
+  background-color: #1A1A1A;
+  border: none;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-cta-button:hover {
+  opacity: 0.8;
+}
+
+.hero-image-wrapper {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Tampilan untuk Mobile */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-text-content {
+    padding-right: 0;
+    margin-top: 2rem;
+  }
+  .hero-headline {
+    font-size: 3rem;
+  }
+  .hero-image-wrapper {
+    max-width: 80%;
+  }
+}

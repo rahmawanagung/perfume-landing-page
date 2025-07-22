@@ -1,0 +1,21 @@
+.product-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 kolom di mobile */
+  gap: 2rem;
+  padding: 0 2rem 4rem 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .product-grid-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 kolom di tablet */
+    gap: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid-container {
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom di desktop */
+  }
+}

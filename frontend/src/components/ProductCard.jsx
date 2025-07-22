@@ -1,32 +1,22 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./ProductCard.css";
 
-const ProductCard = ({ product }) => {
-  const formatPrice = (price) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      minimumFractionDigits: 0,
-    }).format(price);
-  };
+function ProductCard({ product }) {
+  // Fallback jika image_url tidak ada
+  const imageUrl =
+    product.image_url || "https://via.placeholder.com/400x500.png?text=Image+Not+Found";
 
   return (
-    <Link to={`/perfume/${product.id}`} className="product-card-link">
-      <div className="product-card">
-        <div className="product-image-container">
-          <img
-            src={product.imgurl}
-            alt={`${product.brand} - ${product.name}`}
-            className="product-image"
-            loading="lazy"
-          />
-        </div>
-        <h3 className="product-brand">{product.brand}</h3>
-        <h2 className="product-name">{product.name}</h2>
-        <p className="product-price">{formatPrice(product.price)}</p>
+    <div className="product-card-minimal">
+      <div className="card-image-container">
+        <img src={imageUrl} alt={product.name} />
       </div>
-    </Link>
+      <div className="card-info">
+        <p className="perfume-brand">{product.brand}</p>
+        <h4 className="perfume-name">{product.name}</h4>
+      </div>
+    </div>
   );
-};
+}
 
 export default ProductCard;
